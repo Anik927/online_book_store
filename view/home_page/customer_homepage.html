@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store - Search & Cart (Task 3)</title>
+    <link rel="stylesheet" href="customer_homepage.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">BookStore Panel</div>
+        <div class="cart-icon-container" id="cart-nav-trigger">
+            🛒 Cart <span class="cart-count" id="global-cart-count">0</span>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        
+        <section class="shop-section">
+            
+            <div class="search-container">
+                <input type="text" id="search" class="search" placeholder="Search books dynamically...">
+                
+                <select id="filter" class="filter">
+                    <option value="title">Search by Title</option>
+                    <option value="author">Search by Author</option>
+                    <option value="category">Search by Genre/Category</option>
+                </select>
+            </div>
+
+            <div class="display-books" id="display-books">
+
+            </div>
+        </section>
+
+        <section class="cart-section">
+            <div class="cart-header">Your Shopping Cart</div>
+            
+            <div class="cart-items-list" id="cart-items-container">
+
+            </div>
+
+            <div class="cart-total-section">
+                <div class="total-row">
+                    <span>Total Amount:</span>
+                    <span id="total-price">$0.00</span>
+                </div>
+                <button class="btn-checkout" id="btn-checkout">Proceed to Checkout</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Order History — আলাদা Section -->
+    <div class="order-history-wrapper">
+        <h2 class="order-history-title">My Order History</h2>
+
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Books</th>
+                    <th>Total</th>
+                    <th>Payment</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="order-history-body">
+                <!-- JS দিয়ে dynamically load হবে -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="customer_homepage.js"></script>
+</body>
+</html>
