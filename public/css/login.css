@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@400;500&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   BASE
+=========================== */
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5f3ef;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===========================
+   PAGE WRAP
+=========================== */
+.page-wrap {
+    display: flex;
+    width: 680px;
+    min-height: 520px;
+    border-radius: 12px;
+    border: 0.5px solid #ddd8cf;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(28, 26, 23, 0.08);
+}
+
+/* ===========================
+   LEFT PANEL
+=========================== */
+.side-panel {
+    width: 220px;
+    flex-shrink: 0;
+    background: #1c1a17;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 28px;
+}
+
+.side-inner {
+    text-align: center;
+}
+
+.logo-mark {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #faf8f4;
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 12.5px;
+    color: #6b6457;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+/* ===========================
+   RIGHT PANEL
+=========================== */
+.form-panel {
+    flex: 1;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 36px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #1c1a17;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.sub {
+    font-size: 13px;
+    color: #8a8070;
+    margin-bottom: 24px;
+}
+
+/* ===========================
+   ERROR BANNER
+=========================== */
+.alert-error {
+    background: #fcebeb;
+    border: 0.5px solid #f09595;
+    color: #a32d2d;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12.5px;
+    margin-bottom: 14px;
+    display: none;
+}
+
+/* ===========================
+   FIELDS
+=========================== */
+.field {
+    margin-bottom: 14px;
+}
+
+.field label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #1c1a17;
+    margin-bottom: 5px;
+}
+
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="text"] {
+    width: 100%;
+    padding: 9px 12px;
+    border: 0.5px solid #c8c2b8;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: #1c1a17;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.field input:focus {
+    border-color: #c8873a;
+    box-shadow: 0 0 0 3px rgba(200, 135, 58, 0.12);
+}
+
+.field.invalid input {
+    border-color: #e24b4a;
+    box-shadow: 0 0 0 3px rgba(226, 75, 74, 0.1);
+}
+
+.field-error {
+    display: block;
+    font-size: 11.5px;
+    color: #a32d2d;
+    margin-top: 4px;
+    min-height: 15px;
+}
+
+/* ===========================
+   PASSWORD WRAP
+=========================== */
+.password-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrap input {
+    padding-right: 38px;
+}
+
+.eye-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #8a8070;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    font-size: 16px;
+    transition: color 0.15s;
+    width: auto;
+    height: auto;
+}
+
+.eye-btn:hover {
+    color: #c8873a;
+}
+
+/* ===========================
+   REMEMBER ME
+=========================== */
+.remember-row {
+    margin: 6px 0 20px;
+}
+
+.check-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    color: #6b6457;
+    cursor: pointer;
+    user-select: none;
+}
+
+.check-label input[type="checkbox"] {
+    display: none;
+}
+
+.check-box {
+    width: 15px;
+    height: 15px;
+    border: 0.5px solid #c8c2b8;
+    border-radius: 4px;
+    background: #ffffff;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.check-label input:checked + .check-box {
+    background: #c8873a;
+    border-color: #c8873a;
+}
+
+.check-label input:checked + .check-box::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 7px;
+    border: 1.5px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg) translateY(-1px);
+}
+
+/* ===========================
+   SUBMIT BUTTON
+=========================== */
+.btn-login {
+    width: 100%;
+    padding: 10px;
+    background: #c8873a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.15s, transform 0.1s;
+    margin-bottom: 16px;
+}
+
+.btn-login:hover {
+    background: #a56b28;
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+.btn-login:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* spinner */
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.65s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===========================
+   DIVIDER
+=========================== */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.divider-line {
+    flex: 1;
+    height: 0.5px;
+    background: #ddd8cf;
+}
+
+.divider-text {
+    font-size: 11.5px;
+    color: #8a8070;
+}
+
+/* ===========================
+   REGISTER LINK
+=========================== */
+.register-link {
+    text-align: center;
+    font-size: 12.5px;
+    color: #8a8070;
+}
+
+.register-link a {
+    color: #c8873a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 680px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .page-wrap {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        flex-direction: column;
+    }
+
+    .side-panel {
+        width: 100%;
+        padding: 32px 24px;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .side-inner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
+    }
+
+    .logo-mark {
+        margin-bottom: 0;
+        font-size: 28px;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .form-panel {
+        padding: 32px 24px;
+        align-items: flex-start;
+    }
+}
